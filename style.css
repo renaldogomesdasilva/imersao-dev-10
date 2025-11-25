@@ -116,14 +116,24 @@ header h1 {
 }
 
 main {
-    flex-grow: 1; /* Faz o main ocupar o espaço restante */
+    flex-grow:1; /* Faz o main ocupar o espaço restante */
     margin-left: calc(280px + 2rem); /* Adiciona margem à esquerda para não ficar sob a barra lateral */
     padding: 2rem; /* Espaçamento interno */
-    max-width: 76rem;
+    max-width: 75rem;
     background-color: #ffffff; /* Cor de fundo branca */
     border-radius: 1rem; /* Bordas arredondadas */
     height: calc(100% - 2rem); /* Ocupa a altura da tela menos as margens */
     margin-top: 1rem; /* Alinha com o topo do header */
+    margin-bottom: 1rem;
+    position: fixed; /* Mantém a barra lateral fixa na tela */
+    overflow-y: auto; /* Permite a rolagem vertical quando o conteúdo transborda */
+    scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
+    -ms-overflow-style: none;  /* Oculta a barra de rolagem no Internet Explorer e Edge */
+}
+
+/* Oculta a barra de rolagem em navegadores WebKit (Chrome, Safari, Opera) */
+main::-webkit-scrollbar {
+    display: none;
 }
 
 article {
