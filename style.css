@@ -14,43 +14,64 @@
 
 body {
     margin: 0; /* Remove a margem padrão do body */
+    display: flex; /* Habilita o layout flexbox para o layout da barra lateral */
     background: var(--bg-color); /* Define a cor de fundo usando uma variável */
     color: var(--secondary-color); /* Define a cor do texto padrão usando uma variável */
     font-family: "Quicksand", sans-serif; /* Define a família da fonte */
 }
 
 header {
-    padding: 2rem 1rem; /* Espaçamento interno (2rem em cima/baixo, 1rem nos lados) */
+    width: 280px; /* Largura fixa da barra lateral */
+    padding: 2rem; /* Espaçamento interno */
     display: flex; /* Habilita o layout flexbox */
-    align-items: center; /* Alinha os itens verticalmente ao centro */
-    justify-content: space-around; /* Distribui os itens com espaço ao redor */
-    position: sticky; /* Mantém o cabeçalho fixo no topo ao rolar a página */
-    top: 0; /* Posição do topo quando sticky */
-    background: var(--bg-color); /* Cor de fundo do cabeçalho */
+    flex-direction: column; /* Organiza os itens internos em coluna */
+    gap: 2.5rem; /* Adiciona espaço entre os elementos filhos (logo, busca, links) */
+    position: fixed; /* Mantém a barra lateral fixa na tela */    
+    height: calc(100% - 2rem); /* Ocupa a altura da tela menos as margens */
+    top: 1rem;
+    left: 1rem;
+    background: #ffffff; /* Cor de fundo do cabeçalho */
     z-index: 10; /* Define a ordem de empilhamento para ficar sobre outros elementos */
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1); /* Sombra sutil para separar do conteúdo */
-    gap: 1rem; /* Espaçamento entre os elementos flex */
+    border-radius: 1rem; /* Bordas arredondadas */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra para o efeito de elevação */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o logo e o título */
+    gap: 0.75rem; /* Espaço entre o logo e o título */
+    margin-top: 7rem; /* Adiciona espaço acima do logo */
+}
+
+.logo {
+    width: 200px; /* Define a largura do logo */
 }
 
 header h1 {
-    font-size: 3rem; /* Tamanho da fonte */
+    font-size: 2.5rem; /* Tamanho da fonte ajustado */
     margin: 0; /* Remove a margem padrão */
     font-weight: 500; /* Peso da fonte (médio) */
     white-space: nowrap; /* Impede a quebra de linha do texto */
 }
 
+/* Container de busca dentro da barra lateral */
+.search-container {
+    display: flex;
+    flex-direction: row; /* Alinha o input e o botão lado a lado */
+    gap: 0.5rem;
+}
+
 /* Usar uma classe para o container de busca é mais específico */
 .search-container input {
     padding: 0.375rem 0.75rem; /* Espaçamento interno */
-    border-radius: 1rem; /* Arredonda as bordas */
+    border-radius: 0; /* Cantos quadrados */
     border: 1px solid var(--tertiary-color); /* Define a borda */
     background: var(--bg-color); /* Cor de fundo */
-    font-family: inherit; /* Herda a família da fonte do elemento pai */
-    font-size: 1.5rem; /* Tamanho da fonte */
+    font-family: inherit; /* Herda a família da fonte do elemento pai */    font-size: 1rem; /* Tamanho da fonte */
     transition: all 0.2s ease; /* Adiciona uma transição suave para todas as propriedades */
-    width: 30rem; /* Largura do input */
+    width: 100%; /* Ocupa o espaço disponível */
     color: var(--secondary-color); /* Cor do texto digitado */
-    margin-right: .5rem; /* Margem à direita */
 }
 
 .search-container input::placeholder {
@@ -66,18 +87,22 @@ header h1 {
 }
 
 #botao-busca {
-    padding: 1rem 2rem; /* Espaçamento interno */
-    border-radius: 1rem; /* Arredonda as bordas */
+    padding: 0; /* Remove o padding para controlar o tamanho com width/height */
+    border-radius: 0; /* Cantos quadrados */
     border: none; /* Remove a borda padrão */
     cursor: pointer; /* Muda o cursor para uma mão ao passar por cima */
     font-family: inherit; /* Herda a família da fonte */
-    font-weight: 500; /* Peso da fonte */
-    font-size: 1rem; /* Tamanho da fonte */
-    white-space: nowrap; /* Impede a quebra de linha do texto */
     transition: background-color 0.2s ease, color 0.2s ease; /* Transição suave para cor de fundo e cor do texto */
     background-color: var(--bg-color); /* Cor de fundo */
     color: var(--secondary-color); /* Cor do texto */
     border: 1px solid var(--bg-color); /* Adiciona uma borda */
+    /* Transforma o botão em um quadrado e centraliza o ícone */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Largura do botão */
+    height: 40px; /* Altura do botão */
+    flex-shrink: 0; /* Impede que o botão encolha */
 }
 
 #botao-busca:hover {
@@ -91,11 +116,14 @@ header h1 {
 }
 
 main {
-    overflow-y: scroll; /* Adiciona uma barra de rolagem vertical se o conteúdo exceder a altura */
-    max-width: 80rem; /* Largura máxima do conteúdo principal */
-    margin: 0 auto; /* Centraliza o conteúdo principal horizontalmente */
-    margin-top: 2rem; /* Margem no topo */
-    height: calc(100vh - 10rem - 4rem); /* Calcula a altura para preencher o espaço restante da tela */
+    flex-grow: 1; /* Faz o main ocupar o espaço restante */
+    margin-left: calc(280px + 2rem); /* Adiciona margem à esquerda para não ficar sob a barra lateral */
+    padding: 2rem; /* Espaçamento interno */
+    max-width: 76rem;
+    background-color: #ffffff; /* Cor de fundo branca */
+    border-radius: 1rem; /* Bordas arredondadas */
+    height: calc(100% - 2rem); /* Ocupa a altura da tela menos as margens */
+    margin-top: 1rem; /* Alinha com o topo do header */
 }
 
 article {
@@ -128,7 +156,7 @@ article p {
     line-height: 1.6; /* Altura da linha para melhor legibilidade */
     font-size: 1rem; /* Tamanho da fonte */
     margin-bottom: 0.5rem; /* Margem inferior */
-    color: var(--secondary-color); /* Cor do texto */
+    color: #202124; /* Cor do texto ajustada para fundo branco */
 }
 
 article p strong {
@@ -146,98 +174,43 @@ article a:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
 
-.footer {
-    position: absolute; /* Posicionamento absoluto em relação ao elemento pai posicionado */
-    bottom: 0; /* Alinha na parte inferior */
-    left: 0; /* Alinha à esquerda */
-    width: 100%; /* Largura total */
-    color: var(--tertiary-color); /* Cor do texto */
-    background-color: var(--bg-color); /* Cor de fundo */
-    padding: 15px 20px; /* Espaçamento interno */
-    border-top: 1px solid #3c4043; /* Borda superior */
-    font-size: 0.8rem; /* Tamanho da fonte */
-}
-
-.footer-location {
-    color: #9aa0a6; /* Cor do texto */
-    margin-bottom: 10px; /* Margem inferior */
-}
-
-.footer-links {
+/* Links sociais na barra lateral */
+.social-links {
     list-style: none; /* Remove os marcadores da lista */
-    display: flex; /* Habilita o layout flexbox */
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    gap: 15px; /* Espaçamento entre os links */
+    padding: 0;
+    margin-top: 14rem; /* Empurra a lista para o final do header (flex container) */
+    text-align: center;
 }
 
-.footer-links a {
-    color: var(--secondary-color); /* Cor do link */
+.social-links li {
+    margin-bottom: 7px;
+}
+
+.social-links a {
+    color:#202124; /* Cor do link */
     text-decoration: none; /* Remove o sublinhado */
     transition: color 0.2s; /* Transição suave para a cor */
+    font-size: 0.9rem; /* Tamanho da fonte para os links sociais */
 }
 
-.footer-links a:hover {
-    color: var(--accent-color); /* Muda a cor do link ao passar o mouse (variável não definida) */
+.social-links a:hover {
+    color: var(--accent-color); /* Muda a cor do link ao passar o mouse */
 }
 
 @media (max-width: 768px) {
-    header { /* Estilos para telas com largura máxima de 768px */
-        flex-direction: column; /* Organiza os itens do cabeçalho em coluna */
-        padding: 1rem; /* Reduz o espaçamento interno */
+    /* Em telas menores, a barra lateral é ocultada */
+    header {
+        display: none;
     }
 
-    header h1 { /* Estilos para o h1 no cabeçalho em telas menores */
-        text-align: center; /* Centraliza o texto */
-        margin-bottom: 1rem; /* Adiciona margem inferior */
+    /* O conteúdo principal ocupa toda a largura */
+    main {
+        margin-left: 0;
+        padding: 1rem;
     }
 
-    /* Mantendo a especificidade com a classe */
-    .search-container input { /* Estilos para o input em telas menores */
-        width: 90vw; /* Largura baseada na largura da viewport */
-        font-size: 1.2rem; /* Reduz o tamanho da fonte */
-    }
-
-    main { /* Estilos para o main em telas menores */
-        padding: 0 1rem; /* Adiciona espaçamento lateral */
-    }
-
-    article:hover { /* Estilos para o article em telas menores */
-        transform: none; /* Remove o efeito de escala ao passar o mouse */
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 { /* Estilos para o h1 em telas com largura máxima de 480px */
-        font-size: 1rem; /* Reduz ainda mais o tamanho da fonte */
-        max-width: 70%; /* Define uma largura máxima */
-        word-wrap: break-word; /* Permite a quebra de palavras longas */
-    }
-
-    .search-container input, /* Estilos para o input e seu placeholder em telas muito pequenas */
-    .search-container input::placeholder {
-        font-size: 1rem; /* Reduz o tamanho da fonte */
-    }
-
-    article h2 { /* Estilos para o h2 do article em telas muito pequenas */
-        font-size: 1.3rem; /* Reduz o tamanho da fonte */
-    }
-    
-    /* Usar uma classe para o container de busca é mais seguro que o seletor 'div' */
-    .search-container { /* Estilos para a div do cabeçalho em telas muito pequenas */
-        display: flex; /* Habilita flexbox */
-        align-items: center; /* Alinha itens ao centro */
-        justify-content: center; /* Centraliza itens */
-        flex-direction: column; /* Organiza em coluna */
-        gap: 0.5rem; /* Espaçamento entre os itens */
-    }
-
-    .footer { /* Estilos para o rodapé em telas muito pequenas */
-        display: none; /* Oculta o rodapé */
-    }
-
-    /* Usar o ID é mais específico e seguro */
-    #botao-busca { /* Estilos para o botão em telas muito pequenas */
-        margin-top: 1rem; /* Adiciona margem no topo */
-    }
+    /* Para uma melhor experiência em dispositivos móveis, seria necessário
+       adicionar um botão "hamburger" para mostrar/esconder o menu,
+       o que normalmente requer um pouco de JavaScript.
+       Por enquanto, a barra lateral será simplesmente escondida. */
 }
