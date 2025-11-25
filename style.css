@@ -119,7 +119,7 @@ main {
     flex-grow:1; /* Faz o main ocupar o espaço restante */
     margin-left: calc(280px + 2rem); /* Adiciona margem à esquerda para não ficar sob a barra lateral */
     padding: 2rem; /* Espaçamento interno */
-    max-width: 75rem;
+    max-width: 76rem;
     background-color: #ffffff; /* Cor de fundo branca */
     border-radius: 1rem; /* Bordas arredondadas */
     height: calc(100% - 2rem); /* Ocupa a altura da tela menos as margens */
