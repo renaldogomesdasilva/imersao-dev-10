@@ -106,9 +106,9 @@ header h1 {
 }
 
 #botao-busca:hover {
-    background-color: var(--primary-color); /* Muda a cor de fundo ao passar o mouse */
-    color: var(--bg-color); /* Muda a cor do texto ao passar o mouse */
-    box-shadow: 0 0 0 0.1rem var(--primary-color); /* Adiciona uma sombra de caixa */
+    background-color: #000000; /* Muda a cor de fundo ao passar o mouse */
+    color: var(#000000); /* Muda a cor do texto ao passar o mouse */
+    box-shadow: 0 0 0 0.1rem var(#000000); /* Adiciona uma sombra de caixa */
 }
 
 #botao-busca:active {
@@ -143,12 +143,6 @@ article {
     margin-bottom: 1.25rem; /* Margem inferior */
     box-shadow: none; /* Sem sombra */
     transition: background-color 0.3s ease, border-bottom-color 0.3s ease; /* Transição suave */
-    border-bottom: 1px solid #3c4043; /* Borda inferior com um pouco mais de contraste */
-}
-
-article:hover {
-    transform: scale(1.01); /* Aumenta ligeiramente o tamanho ao passar o mouse */
-    cursor: pointer; /* Muda o cursor para uma mão */
 }
 
 article h2 {
