@@ -1,14 +1,14 @@
 const cardContainer = document.querySelector(".card-container");
 const botaoBusca = document.getElementById('botao-busca');
 const searchInput = document.getElementById('search-input');
-let dadosOriginais = {};
+let dadosOriginais = []; // Agora será um array de golpes
 
 // Função para carregar os dados do JSON quando a página carregar
 async function carregarDados() {
     try {
         const resposta = await fetch("data.json");
         dadosOriginais = await resposta.json();
-        renderizarCard(dadosOriginais); // Exibe tudo inicialmente
+        renderizarCards(dadosOriginais); // Exibe todos os cards inicialmente
     } catch (error) {
         console.error("Erro ao carregar dados:", error);
         cardContainer.innerHTML = "<p>Não foi possível carregar o conteúdo.</p>";
@@ -24,62 +24,52 @@ function iniciaBusca(evento) {
 
     // Se não houver termo de busca, exibe tudo
     if (!termoBusca) {
-        renderizarCard(dadosOriginais);
+        renderizarCards(dadosOriginais);
         return;
     }
 
-    // Cria um novo objeto para armazenar os resultados da busca
-    const dadosFiltrados = {};
-    
-    // Itera sobre as chaves do objeto de dados original (ex: "dojo", "sobre-dojo")
-    for (const chave in dadosOriginais) {
-        const valor = dadosOriginais[chave].toLowerCase();
-        if (valor.includes(termoBusca)) {
-            // Se o valor contém o termo de busca, adiciona o par chave-valor correspondente
-            // Por exemplo, se "sobre-dojo" contém o termo, adicionamos "dojo" e "sobre-dojo"
-            if (chave.startsWith('sobre-')) {
-                const chavePrincipal = chave.replace('sobre-', '');
-                dadosFiltrados[chavePrincipal] = dadosOriginais[chavePrincipal];
-                dadosFiltrados[chave] = dadosOriginais[chave];
-            } else {
-                 dadosFiltrados[chave] = dadosOriginais[chave];
-            }
-        }
-    }
+    // Filtra o array de golpes
+    const dadosFiltrados = dadosOriginais.filter(golpe => {
+        const nome = golpe.nome.toLowerCase();
+        const descricao = golpe.descricao.toLowerCase();
+        const tipo = golpe.tipo.toLowerCase();
+        const tags = golpe.tags.join(' ').toLowerCase(); // Junta as tags em uma string
 
-    renderizarCard(dadosFiltrados);
+        return nome.includes(termoBusca) ||
+               descricao.includes(termoBusca) ||
+               tipo.includes(termoBusca) ||
+               tags.includes(termoBusca);
+    });
+
+    renderizarCards(dadosFiltrados);
 }
 
-function renderizarCard(dadosParaRenderizar){
+function renderizarCards(listaDeGolpes){
     cardContainer.innerHTML = ''; 
 
     // Se nenhum dado corresponder à busca, exibe uma mensagem
-    if (Object.keys(dadosParaRenderizar).length === 0) {
+    if (listaDeGolpes.length === 0) {
         cardContainer.innerHTML = '<p class="card">Nenhum resultado encontrado.</p>';
         return;
     }
 
-    const article = document.createElement("article");
-    article.classList.add("card");
+    // Itera sobre cada golpe e cria um card para ele
+    listaDeGolpes.forEach(golpe => {
+        const article = document.createElement("article");
+        article.classList.add("card");
 
-    // Adiciona o conteúdo dinamicamente se ele existir nos dados filtrados
-    let htmlConteudo = '';
-    if (dadosParaRenderizar.dojo) {
-        htmlConteudo += `<h2>${dadosParaRenderizar.dojo}</h2>`;
-    }
-    if (dadosParaRenderizar['sobre-dojo']) {
-        htmlConteudo += `<p>${dadosParaRenderizar['sobre-dojo']}</p>`;
-    }
-    if (dadosParaRenderizar.treinamentos) {
-        htmlConteudo += `<h2>${dadosParaRenderizar.treinamentos}</h2>`;
-    }
-    if (dadosParaRenderizar['sobre-treinamentos']) {
-        htmlConteudo += `<p>${dadosParaRenderizar['sobre-treinamentos']}</p>`;
-    }
-    
-    article.innerHTML = htmlConteudo;
+        // Cria o conteúdo HTML para o card do golpe
+        article.innerHTML = `
+            <h2>${golpe.nome} <span class="tipo-golpe">(${golpe.tipo})</span></h2>
+            <p>${golpe.descricao}</p>
+            <div class="tags-container">
+                ${golpe.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+            </div>
+            <a href="${golpe.video_link}" target="_blank" class="video-link">Assistir ao vídeo</a>
+        `;
 
-    cardContainer.appendChild(article);
+        cardContainer.appendChild(article);
+    });
 }
 
 // Adiciona o evento de clique ao botão, chamando a função iniciaBusca
