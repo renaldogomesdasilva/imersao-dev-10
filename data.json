@@ -3,302 +3,150 @@
     "nome": "Oi Zuki",
     "descricao": "Soco em avanço, realizado dando um passo à frente com o mesmo lado do braço que golpeia, maximizando o impulso corporal. É um golpe fundamental de ataque.",
     "tipo": "soco",
-    "video_link": "https://www.youtube.com/watch?v=FjK8v2v4XyE",
-    "tags": [
-      "kihon",
-      "soco em avanço",
-      "faixa amarela",
-      "poder",
-      "kumite"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=FjK8v2v4XyE"
   },
   {
     "nome": "Mae Geri Keage",
     "descricao": "Chute frontal chicote, onde o joelho é elevado e a perna é estendida rapidamente (snap), atingindo o alvo com o koshi (bola do pé) ou dedos, focado na velocidade.",
     "tipo": "chute",
-    "video_link": "https://www.youtube.com/watch?v=4fWwX5o9YqE",
-    "tags": [
-      "kihon",
-      "velocidade",
-      "chute frontal",
-      "faixa laranja"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=4fWwX5o9YqE"
   },
   {
     "nome": "Age Uke",
     "descricao": "Defesa alta utilizada para bloquear ataques direcionados à cabeça ou à parte superior do tronco. O antebraço ascende com rotação para interceptar o golpe.",
     "tipo": "defesa",
-    "video_link": "https://www.youtube.com/watch?v=XWzZ8c5rP7E",
-    "tags": [
-      "kihon",
-      "defesa alta",
-      "faixa branca",
-      "proteção"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=XWzZ8c5rP7E"
   },
   {
     "nome": "Zenkutsu Dachi",
     "descricao": "Base de avanço, onde o peso está 60% na perna da frente, com o joelho dobrado e o pé de trás a 45 graus. Usada para maximizar o avanço e a força de ataque.",
     "tipo": "base",
-    "video_link": "https://www.youtube.com/watch?v=jWqM0x9tD_k",
-    "tags": [
-      "kihon",
-      "base fundamental",
-      "estabilidade",
-      "ataque",
-      "faixa branca"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=jWqM0x9tD_k"
   },
   {
     "nome": "Kizami Zuki",
     "descricao": "Soco com o braço da frente (jab), rápido e direto, usado principalmente para perturbar o adversário, medir a distância ou iniciar uma combinação.",
     "tipo": "soco",
-    "video_link": "https://www.youtube.com/watch?v=R9L8E0E9yO4",
-    "tags": [
-      "kumite",
-      "velocidade",
-      "golpe inicial",
-      "faixa verde"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=R9L8E0E9yO4"
   },
   {
     "nome": "Yoko Geri Kekomi",
     "descricao": "Chute lateral penetrante. O pé é girado, o quadril é encaixado e a perna é estendida com força, atingindo com a faca do pé (sokuto), visando o poder de penetração.",
     "tipo": "chute",
-    "video_link": "https://www.youtube.com/watch?v=P_JzJd8D9lQ",
-    "tags": [
-      "kihon",
-      "poder",
-      "chute lateral",
-      "faixa marrom"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=P_JzJd8D9lQ"
   },
   {
     "nome": "Soto Uke",
     "descricao": "Defesa de fora para dentro. O antebraço defende um ataque mediano movendo-se de fora da linha central do corpo para dentro.",
     "tipo": "defesa",
-    "video_link": "https://www.youtube.com/watch?v=qT_Vz8K1L6M",
-    "tags": [
-      "kihon",
-      "defesa média",
-      "faixa amarela",
-      "aplicação"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=qT_Vz8K1L6M"
   },
   {
     "nome": "Kokutsu Dachi",
     "descricao": "Base recuada, onde o peso está concentrado 70% na perna de trás, que está dobrada, e o corpo levemente inclinado para trás. Ideal para defesas e contra-ataques.",
     "tipo": "base",
-    "video_link": "https://www.youtube.com/watch?v=2nI6E7y9E4U",
-    "tags": [
-      "kihon",
-      "defensiva",
-      "equilíbrio",
-      "faixa laranja"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=2nI6E7y9E4U"
   },
   {
     "nome": "Uraken Uchi",
     "descricao": "Golpe de dorso do punho. O punho é chicoteado de forma rápida e reversa, geralmente em alvos próximos, usando os dois primeiros nós do dedo.",
     "tipo": "soco",
-    "video_link": "https://www.youtube.com/watch?v=D9oK7vJj2Xk",
-    "tags": [
-      "shuto",
-      "velocidade",
-      "golpe de snap",
-      "kata Heian Yondan"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=D9oK7vJj2Xk"
   },
   {
     "nome": "Mawashi Geri",
     "descricao": "Chute circular. O joelho é elevado e o quadril é girado para entregar um golpe potente com a bola do pé (koshi) ou o peito do pé no alvo lateral.",
     "tipo": "chute",
-    "video_link": "https://www.youtube.com/watch?v=sO7z8Q0p3_M",
-    "tags": [
-      "kihon",
-      "chute avançado",
-      "kumite",
-      "rotação de quadril"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=sO7z8Q0p3_M"
   },
   {
     "nome": "Gedan Barai",
     "descricao": "Defesa baixa para desviar ataques ao nível da virilha ou pernas. O braço varre o golpe em direção descendente e lateral.",
     "tipo": "defesa",
-    "video_link": "https://www.youtube.com/watch?v=kYv9L1d5eWc",
-    "tags": [
-      "kihon",
-      "defesa baixa",
-      "faixa branca",
-      "essencial"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=kYv9L1d5eWc"
   },
   {
     "nome": "Kiba Dachi",
     "descricao": "Base do cavaleiro, onde os pés estão paralelos e afastados, joelhos dobrados, simulando cavalgar. Foca na força e estabilidade lateral do quadril.",
     "tipo": "base",
-    "video_link": "https://www.youtube.com/watch?v=qW6zV3l8N8A",
-    "tags": [
-      "kihon",
-      "base lateral",
-      "força",
-      "faixa azul"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=qW6zV3l8N8A"
   },
   {
     "nome": "Tettsui Uchi",
     "descricao": "Golpe de martelo. O punho fechado golpeia com a parte inferior (lado do dedo mínimo), como um martelo, muitas vezes em alvos como têmporas ou clavícula.",
     "tipo": "soco",
-    "video_link": "https://www.youtube.com/watch?v=E6uN9S8Lp1k",
-    "tags": [
-      "uchi",
-      "poder",
-      "ataque de martelo",
-      "kata Kanku Dai"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=E6uN9S8Lp1k"
   },
   {
     "nome": "Ushiro Geri",
     "descricao": "Chute para trás. Um chute poderoso realizado olhando por cima do ombro, empurrando o calcanhar diretamente para trás. Requer excelente equilíbrio e consciência corporal.",
     "tipo": "chute",
-    "video_link": "https://www.youtube.com/watch?v=4yO0c_L6p9E",
-    "tags": [
-      "avançado",
-      "chute traseiro",
-      "potência",
-      "kumite"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=4yO0c_L6p9E"
   },
   {
     "nome": "Shuto Uke",
     "descricao": "Defesa com a faca da mão (borda externa da mão). Defesa aberta utilizada em Kokutsu Dachi, principalmente para interceptar ataques medianos.",
     "tipo": "defesa",
-    "video_link": "https://www.youtube.com/watch?v=3A5F8k1j0nI",
-    "tags": [
-      "kihon",
-      "mão aberta",
-      "faixa roxa",
-      "kata Bassai Dai"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=3A5F8k1j0nI"
   },
   {
     "nome": "Fudo Dachi",
     "descricao": "Base imóvel ou base enraizada. Uma posição forte e estável, com peso distribuído uniformemente, permitindo transições rápidas para ataque ou defesa. Similar ao Sochin Dachi.",
     "tipo": "base",
-    "video_link": "https://www.youtube.com/watch?v=Lq9X6P4lMvY",
-    "tags": [
-      "avançado",
-      "estabilidade",
-      "base de combate",
-      "faixa preta"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=Lq9X6P4lMvY"
   },
   {
     "nome": "Empi Uchi",
     "descricao": "Cotovelada. Um golpe devastador de curta distância, realizado com a ponta do cotovelo, podendo ser lateral, frontal, ascendente ou descendente.",
     "tipo": "soco",
-    "video_link": "https://www.youtube.com/watch?v=WzF2t6j7o9I",
-    "tags": [
-      "curta distância",
-      "golpe de cotovelo",
-      "bunkai",
-      "poder"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=WzF2t6j7o9I"
   },
   {
     "nome": "Mikazuki Geri",
     "descricao": "Chute meia-lua. A perna varre em um arco (de dentro para fora ou vice-versa), atingindo com a sola do pé. Frequentemente usado para desviar ou quebrar a postura do adversário.",
     "tipo": "chute",
-    "video_link": "https://www.youtube.com/watch?v=jWzL6N7gT9U",
-    "tags": [
-      "chute de varredura",
-      "kumite",
-      "desequilíbrio",
-      "faixa azul"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=jWzL6N7gT9U"
   },
   {
     "nome": "Juji Uke",
     "descricao": "Defesa cruzada. Os braços são cruzados, os antebraços usados para bloquear um ataque, geralmente em nível alto (jodan) ou baixo (gedan), simultaneamente.",
     "tipo": "defesa",
-    "video_link": "https://www.youtube.com/watch?v=P_JzJd8D9lQ",
-    "tags": [
-      "defesa dupla",
-      "kata",
-      "proteção total",
-      "faixa roxa"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=P_JzJd8D9lQ"
   },
   {
     "nome": "Heisoku Dachi",
     "descricao": "Base de atenção, onde os pés estão juntos e paralelos. Usada em cerimônias ou como posição de preparação em katas.",
     "tipo": "base",
-    "video_link": "https://www.youtube.com/watch?v=KzXgS6uR0tY",
-    "tags": [
-      "postura",
-      "formal",
-      "concentração",
-      "rei"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=KzXgS6uR0tY"
   },
   {
     "nome": "Haito Uchi",
     "descricao": "Golpe de faca da mão interna. Realizado com a borda interna da mão aberta (lado do polegar), atacando alvos sensíveis como a garganta ou têmpora.",
     "tipo": "soco",
-    "video_link": "https://www.youtube.com/watch?v=T6r4e1j7u9S",
-    "tags": [
-      "mão aberta",
-      "técnica avançada",
-      "ponto vital",
-      "faixa preta"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=T6r4e1j7u9S"
   },
   {
     "nome": "Hiza Geri",
     "descricao": "Joelhado. Ataque de curta distância onde a articulação do joelho é elevada e impulsionada contra o adversário, eficaz no clinch ou em distâncias muito próximas.",
     "tipo": "chute",
-    "video_link": "https://www.youtube.com/watch?v=A7gE0xTzW2B",
-    "tags": [
-      "curta distância",
-      "contato",
-      "joelho",
-      "bunkai"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=A7gE0xTzW2B"
   },
   {
     "nome": "Morote Uke",
     "descricao": "Defesa reforçada. O antebraço executor realiza a defesa (geralmente Soto Uke), e o outro braço, estendido e com o punho fechado, apoia e reforça a técnica.",
     "tipo": "defesa",
-    "video_link": "https://www.youtube.com/watch?v=FjK8v2v4XyE",
-    "tags": [
-      "defesa reforçada",
-      "poder",
-      "kata Heian Godan",
-      "estabilidade"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=FjK8v2v4XyE"
   },
   {
     "nome": "Hangetsu Dachi",
     "descricao": "Base da meia-lua. Base compacta e estreita, com os joelhos ligeiramente virados para dentro, permitindo movimentos circulares e absorção de impacto.",
     "tipo": "base",
-    "video_link": "https://www.youtube.com/watch?v=zE8L7L8Qk9A",
-    "tags": [
-      "base de kata",
-      "absorção",
-      "estabilidade",
-      "faixa marrom"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=zE8L7L8Qk9A"
   },
   {
     "nome": "Nukite",
     "descricao": "Golpe de 'mão de lança'. É um ataque com a ponta dos dedos, focado em pontos vitais ou áreas macias do corpo. Requer treinamento rigoroso para fortalecer os dedos.",
     "tipo": "soco",
-    "video_link": "https://www.youtube.com/watch?v=QxS2hR7kM6D",
-    "tags": [
-      "mão aberta",
-      "pontos vitais",
-      "avançado",
-      "precisão"
-    ]
+    "video_link": "https://www.youtube.com/watch?v=QxS2hR7kM6D"
   }
 ]

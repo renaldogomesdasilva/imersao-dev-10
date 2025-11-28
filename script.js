@@ -33,15 +33,25 @@ function iniciaBusca(evento) {
         const nome = golpe.nome.toLowerCase();
         const descricao = golpe.descricao.toLowerCase();
         const tipo = golpe.tipo.toLowerCase();
-        const tags = golpe.tags.join(' ').toLowerCase(); // Junta as tags em uma string
 
         return nome.includes(termoBusca) ||
                descricao.includes(termoBusca) ||
-               tipo.includes(termoBusca) ||
-               tags.includes(termoBusca);
+               tipo.includes(termoBusca);
     });
 
     renderizarCards(dadosFiltrados);
+}
+
+// Função auxiliar para extrair o ID do vídeo do YouTube
+function extrairIdVideoYouTube(url) {
+    try {
+        const urlObj = new URL(url);
+        // A maioria dos links do YouTube tem o ID no parâmetro 'v'
+        return urlObj.searchParams.get('v');
+    } catch (e) {
+        console.error("URL do vídeo inválida:", url);
+        return null;
+    }
 }
 
 function renderizarCards(listaDeGolpes){
@@ -58,14 +68,17 @@ function renderizarCards(listaDeGolpes){
         const article = document.createElement("article");
         article.classList.add("card");
 
+        const videoId = extrairIdVideoYouTube(golpe.video_link);
+
         // Cria o conteúdo HTML para o card do golpe
         article.innerHTML = `
-            <h2>${golpe.nome} <span class="tipo-golpe">(${golpe.tipo})</span></h2>
-            <p>${golpe.descricao}</p>
-            <div class="tags-container">
-                ${golpe.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+            <div class="card-video-container">
+                <iframe src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <a href="${golpe.video_link}" target="_blank" class="video-link">Assistir ao vídeo</a>
+            <div class="card-info-container">
+                <h2>${golpe.nome} <span class="tipo-golpe">(${golpe.tipo})</span></h2>
+                <p>${golpe.descricao}</p>
+            </div>
         `;
 
         cardContainer.appendChild(article);
@@ -74,6 +87,14 @@ function renderizarCards(listaDeGolpes){
 
 // Adiciona o evento de clique ao botão, chamando a função iniciaBusca
 botaoBusca.addEventListener('click', iniciaBusca);
+
+// Adiciona um evento que escuta a digitação no campo de busca
+searchInput.addEventListener('input', () => {
+    // Se o campo de busca estiver vazio, renderiza todos os cards novamente
+    if (searchInput.value.trim() === '') {
+        renderizarCards(dadosOriginais);
+    }
+});
 
 // Carrega os dados assim que o script é executado
 carregarDados();

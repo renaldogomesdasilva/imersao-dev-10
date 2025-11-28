@@ -5,7 +5,7 @@
 }
 
 :root {
-    --primary-color: #8ab4f8; /* Cor primária (azul claro) */
+    --primary-color: #f56464; /* Cor primária (azul claro) */
     --secondary-color: #e8eaed; /* Cor secundária (cinza claro) */
     --tertiary-color: #9aa0a6; /* Cor terciária (cinza médio) */
     --accent-color: var(--primary-color); /* Cor de destaque, usando a primária como padrão */
@@ -136,13 +136,51 @@ main::-webkit-scrollbar {
     display: none;
 }
 
+/* Novo: Contêiner para a grade de cards */
+.card-container {
+    display: grid;
+    /* Cria colunas que se ajustam: no mínimo 350px, mas podem crescer para preencher o espaço */
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1.5rem; /* Espaço entre os cards */
+}
+
 article {
-    background: none; /* Sem cor de fundo */
-    border-radius: 0; /* Sem bordas arredondadas */
-    padding: 0 1rem 1.5rem; /* Espaçamento interno (topo/baixo, lados) e padding-bottom combinado */
-    margin-bottom: 1.25rem; /* Margem inferior */
-    box-shadow: none; /* Sem sombra */
-    transition: background-color 0.3s ease, border-bottom-color 0.3s ease; /* Transição suave */
+    /* O article agora é um item da grade, não um container flexível de largura total */
+    display: flex;
+    flex-direction: column; /* Vídeo e informações um sobre o outro */
+    gap: 1rem; /* Espaço entre o vídeo e as informações dentro do card */
+    background: #ffffff; /* Cor de fundo clara para o card */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    padding: 1.5rem; /* Espaçamento interno */
+    margin-bottom: 0; /* Removido, pois o 'gap' da grade já cuida do espaçamento */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para o efeito de hover */
+}
+
+article:hover {
+    transform: translateY(-5px); /* Eleva o card ligeiramente */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Aumenta a sombra para dar profundidade */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+/* Contêiner do vídeo */
+.card-video-container {
+    flex: none; /* Remove a propriedade flex */
+    width: 100%; /* Ocupa toda a largura do card */
+    aspect-ratio: 16 / 9; /* Proporção do vídeo */
+}
+
+.card-video-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.25rem; /* Bordas levemente arredondadas */
+}
+
+/* Contêiner das informações */
+.card-info-container {
+    flex: 1; /* Permite que este container cresça para preencher o espaço se necessário */
+    display: flex;
+    flex-direction: column;
 }
 
 article h2 {
@@ -160,7 +198,7 @@ article p {
     line-height: 1.6; /* Altura da linha para melhor legibilidade */
     font-size: 1rem; /* Tamanho da fonte */
     margin-bottom: 0.5rem; /* Margem inferior */
-    color: #202124; /* Cor do texto ajustada para fundo branco */
+    color: #000000; /* Cor do texto ajustada para fundo branco */
 }
 
 article p strong {
@@ -187,18 +225,79 @@ article a:hover {
 }
 
 .social-links li {
-    margin-bottom: 7px;
+    margin-bottom: 7px; /* Adiciona a chave de fechamento que faltava */
 }
 
 .social-links a {
     color:#202124; /* Cor do link */
     text-decoration: none; /* Remove o sublinhado */
     transition: color 0.2s; /* Transição suave para a cor */
-    font-size: 0.9rem; /* Tamanho da fonte para os links sociais */
+    font-size: 0.9rem; /* Tamanho da fonte para os links sociais */ /* Adiciona a chave de fechamento que faltava */
 }
 
 .social-links a:hover {
     color: var(--accent-color); /* Muda a cor do link ao passar o mouse */
+}
+
+/* --- Estilos para o conteúdo textual dentro de <main> --- */
+
+main h1 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee; /* Linha sutil para separar seções */
+}
+
+main h3 {
+    font-size: 1.6rem;
+    color: #333; /* Cor escura para subtítulos */
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+main h4 {
+    font-size: 1.3rem;
+    color: #555;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+main > p { /* O seletor '>' garante que o estilo se aplique apenas aos 'p' diretamente filhos de 'main' */
+    font-size: 1.1rem;
+    line-height: 1.8; /* Aumenta o espaçamento entre linhas para melhor leitura */
+    color: #202124;
+    margin-bottom: 1.2rem;
+}
+
+/* --- Estilos para a seção de Faixas --- */
+
+.faixas-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cria 4 colunas de largura igual */
+    gap: 2rem; /* Espaço entre os itens da grade */
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.faixa-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faixa-item img {
+    max-width: 150px; /* Define uma largura máxima para as imagens das faixas */
+    height: auto;
+    margin-bottom: 0.75rem;
+}
+
+.faixa-item p {
+    margin: 0;
+    line-height: 1.5;
 }
 
 @media (max-width: 768px) {
