@@ -5,7 +5,7 @@
 }
 
 :root {
-    --primary-color: #f56464; /* Cor primária (azul claro) */
+    --primary-color: #ff0000; /* Cor primária (azul claro) */
     --secondary-color: #e8eaed; /* Cor secundária (cinza claro) */
     --tertiary-color: #9aa0a6; /* Cor terciária (cinza médio) */
     --accent-color: var(--primary-color); /* Cor de destaque, usando a primária como padrão */
@@ -25,7 +25,8 @@ header {
     padding: 2rem; /* Espaçamento interno */
     display: flex; /* Habilita o layout flexbox */
     flex-direction: column; /* Organiza os itens internos em coluna */
-    gap: 2.5rem; /* Adiciona espaço entre os elementos filhos (logo, busca, links) */
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    gap: 14rem; /* Adiciona um espaço maior entre o header-top e os social-links */
     position: fixed; /* Mantém a barra lateral fixa na tela */    
     height: calc(100% - 2rem); /* Ocupa a altura da tela menos as margens */
     top: 1rem;
@@ -36,12 +37,19 @@ header {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra para o efeito de elevação */
 }
 
+/* Agrupador para logo e busca, para que o space-between funcione corretamente */
+.header-top {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
 .logo-container {
     display: flex;
     align-items: center;
     justify-content: center; /* Centraliza o logo e o título */
     gap: 0.75rem; /* Espaço entre o logo e o título */
-    margin-top: 7rem; /* Adiciona espaço acima do logo */
+    /* margin-top: 7rem; */ /* Removido para permitir a centralização flexível */
 }
 
 .logo {
@@ -122,10 +130,9 @@ main {
     max-width: 76rem;
     background-color: #ffffff; /* Cor de fundo branca */
     border-radius: 1rem; /* Bordas arredondadas */
-    height: calc(100% - 2rem); /* Ocupa a altura da tela menos as margens */
+    min-height: calc(100vh - 2rem); /* Garante que o main ocupe pelo menos a altura da tela */
     margin-top: 1rem; /* Alinha com o topo do header */
     margin-bottom: 1rem;
-    /* As propriedades de position e overflow foram removidas para permitir a rolagem normal da página */
 }
 
 /* Adiciona um espaçamento após o título das técnicas, substituindo o <br> */
@@ -137,7 +144,7 @@ main h3:has(+ .card-container) {
 .card-container {
     display: grid;
     /* Cria colunas que se ajustam: no mínimo 350px, mas podem crescer para preencher o espaço */
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    grid-template-columns: repeat(4, 1fr); /* Força 4 colunas de largura igual */
     gap: 1.5rem; /* Espaço entre os cards */
     color: #000000;
 }
@@ -218,7 +225,7 @@ article a:hover {
 .social-links {
     list-style: none; /* Remove os marcadores da lista */
     padding: 0;
-    margin-top: 14rem; /* Empurra a lista para o final do header (flex container) */
+    margin: 0; /* Remove a margem que empurrava os links para baixo */
     text-align: center;
 }
 
@@ -245,7 +252,7 @@ main h1 {
     margin-top: 1rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid #eee; /* Linha sutil para separar seções */
+    /*border-bottom: 1px solid #eee; Linha sutil para separar seções */
     text-align: center;
 }
 
@@ -308,7 +315,7 @@ main > p { /* O seletor '>' garante que o estilo se aplique apenas aos 'p' diret
 
 .faixas-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Cria 4 colunas de largura igual */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colunas responsivas */
     gap: 2rem; /* Espaço entre os itens da grade */
     margin: 2rem 0;
     text-align: center;
@@ -333,20 +340,51 @@ main > p { /* O seletor '>' garante que o estilo se aplique apenas aos 'p' diret
     color: #7e8083;
 }
 
-@media (max-width: 768px) {
-    /* Em telas menores, a barra lateral é ocultada */
+/* --- Media Queries para Responsividade --- */
+
+/* Para tablets e telas menores */
+@media (max-width: 1200px) {
+    body {
+        flex-direction: column; /* Empilha a barra lateral e o conteúdo */
+    }
+
     header {
-        display: none;
+        position: relative; /* Remove a fixação */
+        width: auto; /* Largura automática */
+        height: auto; /* Altura automática */
+        top: 0;
+        left: 0;
+        margin: 1rem; /* Margem em todos os lados */
+        flex-direction: row; /* Itens da barra lateral em linha */
+        align-items: center; /* Alinha os itens verticalmente */
+        justify-content: space-between; /* Espaça os itens */
+        flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+        gap: 1.5rem;
+    }
+
+    .logo-container {
+        margin-top: 0; /* Remove a margem superior do logo */
+    }
+
+    .social-links {
+        margin-top: 0; /* Remove a margem superior dos links sociais */
+        display: flex;
+        gap: 1rem;
     }
 
     /* O conteúdo principal ocupa toda a largura */
     main {
-        margin-left: 0;
-        padding: 1rem;
+        margin: 0 1rem 1rem 1rem; /* Ajusta as margens */
+    }
+}
+
+/* Para celulares */
+@media (max-width: 768px) {
+    .dojo-kun-container {
+        flex-direction: column; /* Empilha as colunas do Dojo Kun */
     }
 
-    /* Para uma melhor experiência em dispositivos móveis, seria necessário
-       adicionar um botão "hamburger" para mostrar/esconder o menu,
-       o que normalmente requer um pouco de JavaScript.
-       Por enquanto, a barra lateral será simplesmente escondida. */
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); /* Volta ao comportamento responsivo em telas menores */
+    }
 }
