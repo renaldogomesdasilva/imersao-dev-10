@@ -42,7 +42,7 @@ async function generateNewKnowledge(existingKnowledge) {
     // Lista de nomes existentes para não repetição (para incluir no prompt)
     const existingNames = existingKnowledge.map(item => item.nome).join(', ');
 
-    const systemPrompt = `Você é um especialista em Karatê Shotokan (faixa preta 5º Dan). Sua tarefa é criar uma lista de ${TOTAL_ITEMS} golpes e técnicas de karatê, seguindo uma estrutura JSON específica. Para cada golpe, forneça um nome, uma descrição clara, o tipo de técnica, um link de vídeo ilustrativo do YouTube e tags relevantes.`;
+    const systemPrompt = `Você é um especialista em Karatê Shotokan (faixa preta 5º Dan). Sua tarefa é criar uma lista de ${TOTAL_ITEMS} golpes e técnicas de karatê, seguindo uma estrutura JSON específica. Para cada golpe, forneça um nome, uma descrição clara, o tipo de técnica, um link de vídeo ilustrativo do YouTube que ainda estejam no ar.`;
     
     // NOVO userQuery: Focado em golpes de karatê
     const userQuery = `Gere uma lista de ${TOTAL_ITEMS} golpes e técnicas de karatê. Siga estritamente a estrutura JSON definida e o requisito de ser um ARRAY com EXATAMENTE ${TOTAL_ITEMS} objetos. Os golpes devem ser variados, incluindo socos, chutes, defesas e bases. NÃO use NENHUM dos seguintes nomes já existentes: ${existingNames}.`;

@@ -107,8 +107,8 @@ header h1 {
 
 #botao-busca:hover {
     background-color: #000000; /* Muda a cor de fundo ao passar o mouse */
-    color: var(#000000); /* Muda a cor do texto ao passar o mouse */
-    box-shadow: 0 0 0 0.1rem var(#000000); /* Adiciona uma sombra de caixa */
+    color: #ffffff; /* Muda a cor do texto ao passar o mouse */
+    box-shadow: 0 0 0 0.1rem #000000; /* Adiciona uma sombra de caixa */
 }
 
 #botao-busca:active {
@@ -125,15 +125,12 @@ main {
     height: calc(100% - 2rem); /* Ocupa a altura da tela menos as margens */
     margin-top: 1rem; /* Alinha com o topo do header */
     margin-bottom: 1rem;
-    position: fixed; /* Mantém a barra lateral fixa na tela */
-    overflow-y: auto; /* Permite a rolagem vertical quando o conteúdo transborda */
-    scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
-    -ms-overflow-style: none;  /* Oculta a barra de rolagem no Internet Explorer e Edge */
+    /* As propriedades de position e overflow foram removidas para permitir a rolagem normal da página */
 }
 
-/* Oculta a barra de rolagem em navegadores WebKit (Chrome, Safari, Opera) */
-main::-webkit-scrollbar {
-    display: none;
+/* Adiciona um espaçamento após o título das técnicas, substituindo o <br> */
+main h3:has(+ .card-container) {
+    margin-bottom: 1.5rem;
 }
 
 /* Novo: Contêiner para a grade de cards */
@@ -142,6 +139,7 @@ main::-webkit-scrollbar {
     /* Cria colunas que se ajustam: no mínimo 350px, mas podem crescer para preencher o espaço */
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     gap: 1.5rem; /* Espaço entre os cards */
+    color: #000000;
 }
 
 article {
@@ -248,6 +246,7 @@ main h1 {
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid #eee; /* Linha sutil para separar seções */
+    text-align: center;
 }
 
 main h3 {
@@ -260,7 +259,7 @@ main h3 {
 
 main h4 {
     font-size: 1.3rem;
-    color: #555;
+    color: #000000;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
@@ -271,6 +270,38 @@ main > p { /* O seletor '>' garante que o estilo se aplique apenas aos 'p' diret
     line-height: 1.8; /* Aumenta o espaçamento entre linhas para melhor leitura */
     color: #202124;
     margin-bottom: 1.2rem;
+}
+
+/* --- Estilos para o Dojo Kun --- */
+.dojo-kun-container {
+    display: flex;
+    gap: 2rem; /* Espaço entre as colunas */
+    margin: 1.5rem 0;    
+}
+
+.dojo-kun-column {
+    flex: 1; /* Faz com que cada coluna ocupe o mesmo espaço */
+    display: flex;
+    flex-direction: column;
+}
+
+.dojo-kun-column li { /* Alterado de 'p' para 'li' para corresponder ao novo HTML */
+    font-size: 0.95rem; /* Fonte um pouco menor */
+    line-height: 1.6; /* Espaçamento entre linhas reduzido */
+    margin: 0.3rem 0; /* Diminui a margem entre os parágrafos */
+    list-style: none; /* Remove o marcador padrão da lista */
+    padding-left: 1.2rem; /* Cria espaço para o pseudo-elemento */
+    position: relative; /* Necessário para posicionar o pseudo-elemento ::before */
+    color: #202124;
+}
+
+.dojo-kun-column li::before { /* Alterado de 'p' para 'li' */
+    content: '•'; /* Adiciona o caractere de bolinha */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-color); /* Usa a cor primária para a bolinha */
+    font-weight: bold;
 }
 
 /* --- Estilos para a seção de Faixas --- */
@@ -290,14 +321,16 @@ main > p { /* O seletor '>' garante que o estilo se aplique apenas aos 'p' diret
 }
 
 .faixa-item img {
-    max-width: 150px; /* Define uma largura máxima para as imagens das faixas */
+    max-width: 250px; /* Define uma largura máxima para as imagens das faixas */
     height: auto;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .faixa-item p {
     margin: 0;
-    line-height: 1.5;
+    line-height: 2;
+    font-size: 0.7rem; /* Fonte um pouco menor */
+    color: #7e8083;
 }
 
 @media (max-width: 768px) {

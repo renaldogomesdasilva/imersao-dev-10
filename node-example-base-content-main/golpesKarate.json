@@ -300,5 +300,305 @@
       "avançado",
       "precisão"
     ]
+  },
+  {
+    "nome": "Gyaku Zuki",
+    "descricao": "Soco reverso, realizado com o punho do braço oposto à perna que está na frente (em Zenkutsu Dachi ou Fudo Dachi), fundamental para o contra-ataque.",
+    "tipo": "soco",
+    "video_link": "https://www.youtube.com/watch?v=FjI1K8m7-3A",
+    "tags": [
+      "kihon",
+      "kumite",
+      "básico",
+      "poder"
+    ]
+  },
+  {
+    "nome": "Mae Geri Kekomi",
+    "descricao": "Chute frontal penetrante, visando empurrar e causar dano interno. A força é focada no calcanhar ou na bola do pé, com o quadril engajado no impacto.",
+    "tipo": "chute",
+    "video_link": "https://www.youtube.com/watch?v=gYlE-R-L7l0",
+    "tags": [
+      "kihon",
+      "força",
+      "penetração",
+      "faixa verde"
+    ]
+  },
+  {
+    "nome": "Uchi Ude Uke",
+    "descricao": "Defesa com o antebraço interno, movendo-se de fora para dentro do corpo para desviar ou bloquear ataques médios (chudan).",
+    "tipo": "defesa",
+    "video_link": "https://www.youtube.com/watch?v=R9K13pI8X_w",
+    "tags": [
+      "kihon",
+      "básico",
+      "defesa média",
+      "Heian"
+    ]
+  },
+  {
+    "nome": "Neko Ashi Dachi",
+    "descricao": "Base de 'pé de gato'. Quase todo o peso (90%) está na perna de trás, enquanto o pé da frente toca levemente o chão, permitindo mobilidade e ataques rápidos.",
+    "tipo": "base",
+    "video_link": "https://www.youtube.com/watch?v=68K9Y32J0k4",
+    "tags": [
+      "defensiva",
+      "mobilidade",
+      "kata",
+      "faixa marrom"
+    ]
+  },
+  {
+    "nome": "Jodan Zuki",
+    "descricao": "Soco direto direcionado ao nível superior (Jodan), visando a cabeça ou o rosto do adversário.",
+    "tipo": "soco",
+    "video_link": "https://www.youtube.com/watch?v=i6g3M8zK8sA",
+    "tags": [
+      "kihon",
+      "ataque",
+      "jodan",
+      "faixa amarela"
+    ]
+  },
+  {
+    "nome": "Shiko Dachi",
+    "descricao": "Base do Sumô ou 'quadrado'. Larga e baixa, com os pés apontados para fora (45 graus), desenvolvendo força nas pernas e estabilidade.",
+    "tipo": "base",
+    "video_link": "https://www.youtube.com/watch?v=E-b5lO4pTzk",
+    "tags": [
+      "estabilidade",
+      "kata",
+      "força",
+      "faixa roxa"
+    ]
+  },
+  {
+    "nome": "Tate Shuto Uke",
+    "descricao": "Defesa de mão faca vertical. O braço e o shuto permanecem verticais em vez de horizontais, muitas vezes usado para desviar ataques ao rosto.",
+    "tipo": "defesa",
+    "video_link": "https://www.youtube.com/watch?v=9L-8qR52K1E",
+    "tags": [
+      "defesa",
+      "mão aberta",
+      "precisão",
+      "faixa marrom"
+    ]
+  },
+  {
+    "nome": "Shomen Zuki",
+    "descricao": "Soco frontal realizado com o tronco de frente (sem rotação do quadril), comum em bases laterais como Kiba Dachi ou Shiko Dachi.",
+    "tipo": "soco",
+    "video_link": "https://www.youtube.com/watch?v=7u2qH5e8c1Q",
+    "tags": [
+      "poder",
+      "estático",
+      "kihon",
+      "faixa azul"
+    ]
+  },
+  {
+    "nome": "Gedan Mae Geri",
+    "descricao": "Chute frontal baixo (Gedan), focado em atacar a canela ou o joelho do adversário para desequilibrar ou incapacitar.",
+    "tipo": "chute",
+    "video_link": "https://www.youtube.com/watch?v=842Wv-5_7Qo",
+    "tags": [
+      "chute baixo",
+      "desequilíbrio",
+      "kumite",
+      "faixa laranja"
+    ]
+  },
+  {
+    "nome": "Haishu Uke",
+    "descricao": "Defesa com o dorso da mão. O braço estendido ou ligeiramente curvado desvia o ataque, geralmente no nível jodan.",
+    "tipo": "defesa",
+    "video_link": "https://www.youtube.com/watch?v=tI8s58X9d0g",
+    "tags": [
+      "defesa",
+      "mão aberta",
+      "suave",
+      "kata"
+    ]
+  },
+  {
+    "nome": "Kakuto Uke",
+    "descricao": "Defesa do 'pulso de guindaste'. O pulso é dobrado para trás, usando a borda do pulso para bloquear ou interceptar, tipicamente em Jodan.",
+    "tipo": "defesa",
+    "video_link": "https://www.youtube.com/watch?v=93475L_uKjM",
+    "tags": [
+      "avançado",
+      "precisão",
+      "defesa alta",
+      "kata"
+    ]
+  },
+  {
+    "nome": "Musubi Dachi",
+    "descricao": "Postura de atenção ou saudação. Calcanhares juntos e pés abertos em ângulo de 45 graus. Usada em cerimônias e início/fim de kata.",
+    "tipo": "base",
+    "video_link": "https://www.youtube.com/watch?v=YfF8LgL48iQ",
+    "tags": [
+      "cerimonial",
+      "reikihou",
+      "etiqueta",
+      "básico"
+    ]
+  },
+  {
+    "nome": "Nami Ashi",
+    "descricao": "Defesa de 'onda da perna'. A perna é levantada e movida em um movimento de varredura interna para defender e desviar chutes baixos.",
+    "tipo": "técnica de perna",
+    "video_link": "https://www.youtube.com/watch?v=b4S0h37b_1g",
+    "tags": [
+      "defesa de chute",
+      "kumite",
+      "varredura",
+      "kata"
+    ]
+  },
+  {
+    "nome": "Tobi Geri",
+    "descricao": "Chute saltado. Refere-se a qualquer chute executado enquanto o praticante está no ar, geralmente exigindo coordenação e potência explosiva.",
+    "tipo": "chute",
+    "video_link": "https://www.youtube.com/watch?v=n-W6yX3-78c",
+    "tags": [
+      "acrobático",
+      "kumite",
+      "salto",
+      "faixa preta"
+    ]
+  },
+  {
+    "nome": "Hasami Zuki",
+    "descricao": "Soco de tesoura. Dois socos (geralmente Gyaku Zuki e Oi Zuki) executados simultaneamente em diferentes alvos, ou para cercar o adversário.",
+    "tipo": "soco",
+    "video_link": "https://www.youtube.com/watch?v=FqS-9-l17bE",
+    "tags": [
+      "soco duplo",
+      "avançado",
+      "kata",
+      "faixa preta"
+    ]
+  },
+  {
+    "nome": "Mae Hiji Ate",
+    "descricao": "Golpe de cotovelo para frente. Um golpe poderoso de curta distância, desferido com a ponta do cotovelo, útil em combate corpo a corpo.",
+    "tipo": "cotovelo",
+    "video_link": "https://www.youtube.com/watch?v=K3t1q264FjM",
+    "tags": [
+      "combate próximo",
+      "tática",
+      "curta distância",
+      "faixa preta"
+    ]
+  },
+  {
+    "nome": "Kage Zuki",
+    "descricao": "Soco de gancho. O punho se move em um arco curto horizontalmente, atingindo o alvo lateralmente, como nas costelas.",
+    "tipo": "soco",
+    "video_link": "https://www.youtube.com/watch?v=rKjG6gqNl2E",
+    "tags": [
+      "kumite",
+      "gancho",
+      "velocidade",
+      "faixa preta"
+    ]
+  },
+  {
+    "nome": "Kosa Dachi",
+    "descricao": "Base de pernas cruzadas. Usada principalmente em transições rápidas ou para se aproximar do adversário, com uma perna cruzada atrás da outra.",
+    "tipo": "base",
+    "video_link": "https://www.youtube.com/watch?v=34d7w0w0H1w",
+    "tags": [
+      "transição",
+      "mobilidade",
+      "defensiva",
+      "kata"
+    ]
+  },
+  {
+    "nome": "Oi Mae Geri",
+    "descricao": "Chute frontal com passo. Semelhante ao Oi Zuki, a perna de trás avança antes de executar o Mae Geri, ganhando alcance e impulso.",
+    "tipo": "chute",
+    "video_link": "https://www.youtube.com/watch?v=E27h7g4p_mU",
+    "tags": [
+      "ofensivo",
+      "alcance",
+      "velocidade",
+      "kumite"
+    ]
+  },
+  {
+    "nome": "Gedan Kake Uke",
+    "descricao": "Bloqueio baixo em gancho. Usado para desviar ou 'enganchar' ataques de perna, como um Mawashi Geri baixo, com a palma da mão para baixo.",
+    "tipo": "defesa",
+    "video_link": "https://www.youtube.com/watch?v=31D0H4f4Lqk",
+    "tags": [
+      "defesa de perna",
+      "gancho",
+      "kumite",
+      "faixa azul"
+    ]
+  },
+  {
+    "nome": "Ryoto Zuki",
+    "descricao": "Soco duplo. Ambos os punhos atingem o mesmo alvo ou alvos adjacentes (superior/médio) simultaneamente.",
+    "tipo": "soco",
+    "video_link": "https://www.youtube.com/watch?v=vVj2k6923S8",
+    "tags": [
+      "poder",
+      "kata",
+      "impacto",
+      "faixa preta"
+    ]
+  },
+  {
+    "nome": "Shizentai Dachi",
+    "descricao": "Postura natural. Posição ereta e relaxada, com os pés separados na largura dos ombros, usada para retornar ao estado de prontidão.",
+    "tipo": "base",
+    "video_link": "https://www.youtube.com/watch?v=l82r9v7k228",
+    "tags": [
+      "natural",
+      "prontidão",
+      "transição",
+      "básico"
+    ]
+  },
+  {
+    "nome": "Sokuto Geri",
+    "descricao": "Chute com a borda do pé. Embora frequentemente sinônimo de Yoko Geri Kekomi, o termo enfatiza o uso da borda externa e calcanhar para atingir o alvo lateralmente.",
+    "tipo": "chute",
+    "video_link": "https://www.youtube.com/watch?v=lO0Yw7yX-18",
+    "tags": [
+      "lateral",
+      "poder",
+      "kihon",
+      "faixa verde"
+    ]
+  },
+  {
+    "nome": "Kakiwake Uke",
+    "descricao": "Bloqueio de separação ou 'cunha'. Bloqueio duplo realizado simultaneamente, empurrando para fora para separar o adversário ou desviar um agarrão/ataque duplo.",
+    "tipo": "defesa",
+    "video_link": "https://www.youtube.com/watch?v=0h94f4F_V8I",
+    "tags": [
+      "defesa dupla",
+      "kata",
+      "separação",
+      "faixa preta"
+    ]
+  },
+  {
+    "nome": "Yama Zuki",
+    "descricao": "Soco da montanha. Um soco duplo, largo e aberto, onde um punho atinge o nível superior e o outro atinge o nível inferior simultaneamente.",
+    "tipo": "soco",
+    "video_link": "https://www.youtube.com/watch?v=P6jJvN-r9O0",
+    "tags": [
+      "kata",
+      "poder",
+      "avançado",
+      "faixa preta"
+    ]
   }
 ]

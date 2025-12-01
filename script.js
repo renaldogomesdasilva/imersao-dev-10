@@ -1,6 +1,9 @@
 const cardContainer = document.querySelector(".card-container");
-const botaoBusca = document.getElementById('botao-busca');
+// Variáveis para os elementos de busca
 const searchInput = document.getElementById('search-input');
+const botaoBusca = document.getElementById('botao-busca');
+const mainContent = document.querySelector('main');
+
 let dadosOriginais = []; // Agora será um array de golpes
 
 // Função para carregar os dados do JSON quando a página carregar
@@ -13,33 +16,6 @@ async function carregarDados() {
         console.error("Erro ao carregar dados:", error);
         cardContainer.innerHTML = "<p>Não foi possível carregar o conteúdo.</p>";
     }
-}
-
-// Função que inicia a busca quando o botão é clicado
-function iniciaBusca(evento) {
-    // Previne o comportamento padrão do botão, caso ele esteja em um form
-    evento.preventDefault(); 
-
-    const termoBusca = searchInput.value.toLowerCase().trim();
-
-    // Se não houver termo de busca, exibe tudo
-    if (!termoBusca) {
-        renderizarCards(dadosOriginais);
-        return;
-    }
-
-    // Filtra o array de golpes
-    const dadosFiltrados = dadosOriginais.filter(golpe => {
-        const nome = golpe.nome.toLowerCase();
-        const descricao = golpe.descricao.toLowerCase();
-        const tipo = golpe.tipo.toLowerCase();
-
-        return nome.includes(termoBusca) ||
-               descricao.includes(termoBusca) ||
-               tipo.includes(termoBusca);
-    });
-
-    renderizarCards(dadosFiltrados);
 }
 
 // Função auxiliar para extrair o ID do vídeo do YouTube
@@ -85,15 +61,58 @@ function renderizarCards(listaDeGolpes){
     });
 }
 
-// Adiciona o evento de clique ao botão, chamando a função iniciaBusca
-botaoBusca.addEventListener('click', iniciaBusca);
+// --- NOVA LÓGICA DE BUSCA GLOBAL ---
 
-// Adiciona um evento que escuta a digitação no campo de busca
-searchInput.addEventListener('input', () => {
-    // Se o campo de busca estiver vazio, renderiza todos os cards novamente
-    if (searchInput.value.trim() === '') {
-        renderizarCards(dadosOriginais);
+function filtrarConteudoDaPagina() {
+    const termoBusca = searchInput.value.toLowerCase().trim();
+
+    // Filtra os cards de técnicas dinamicamente
+    const golpesFiltrados = dadosOriginais.filter(golpe => 
+        golpe.nome.toLowerCase().includes(termoBusca) || golpe.descricao.toLowerCase().includes(termoBusca)
+    );
+    renderizarCards(golpesFiltrados);
+
+    // Seleciona as seções de conteúdo estático (tudo, exceto o container dos cards)
+    const secoesEstaticas = mainContent.querySelectorAll('section:not(.card-section)');
+
+    secoesEstaticas.forEach(elemento => {
+        // Se a busca estiver vazia, mostra tudo
+        if (termoBusca === '') {
+            elemento.classList.remove('hidden-by-search');
+            return;
+        }
+
+        const textoElemento = elemento.textContent.toLowerCase();
+        const corresponde = textoElemento.includes(termoBusca);
+        elemento.classList.toggle('hidden-by-search', !corresponde);
+    });
+
+    // Lógica especial para a seção de técnicas (cards)
+    const secaoTecnicas = mainContent.querySelector('.card-section');
+
+    if (secaoTecnicas) {
+        // Se a busca estiver vazia, mostra a seção de técnicas
+        if (termoBusca === '') {
+            secaoTecnicas.classList.remove('hidden-by-search');
+            return;
+        }
+
+        // Verifica se o título da seção ou algum card corresponde à busca
+        const textoSecao = secaoTecnicas.textContent.toLowerCase();
+        const corresponde = textoSecao.includes(termoBusca);
+
+        // Mostra a seção de técnicas se o título corresponder OU se houver cards filtrados
+        secaoTecnicas.classList.toggle('hidden-by-search', !corresponde && golpesFiltrados.length === 0);
     }
+}
+
+// Adiciona o evento de 'input' para buscar enquanto o usuário digita
+searchInput.addEventListener('input', filtrarConteudoDaPagina);
+
+// Adiciona evento ao botão para prevenir comportamento padrão e executar a busca
+botaoBusca.addEventListener('click', (e) => {
+    e.preventDefault(); // Previne o envio de formulário
+    filtrarConteudoDaPagina();
 });
 
 // Carrega os dados assim que o script é executado
